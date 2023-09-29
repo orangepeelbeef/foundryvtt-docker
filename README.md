@@ -55,9 +55,9 @@ Alternatively, you may acquire a temporary download URL from your user profile
 page on the Foundry website.
 
 1. Navigate to the [`Purchased Software Licenses` page](https://foundryvtt.com/me/licenses).
-1. Change the `Operating System` menu item to `Linux/NodeJS`.
-1. Click the `🔗 Timed URL` button to obtain the temporary URL.
-1. Use the following command to start up a Foundry Virtual Tabletop server:
+2. Change the `Operating System` menu item to `Linux/NodeJS`.
+3. Click the `🔗 Timed URL` button to obtain the temporary URL.
+4. Use the following command to start up a Foundry Virtual Tabletop server:
 
 ```console
 docker run \
@@ -107,13 +107,13 @@ configuration files, set `CONTAINER_PRESERVE_CONFIG` to `true`.
             protocol: tcp
     ```
 
-1. Start the container and detach:
+2. Start the container and detach:
 
     ```console
     docker compose up --detach
     ```
 
-1. Access the web application at:
+3. Access the web application at:
 [http://localhost:30000](http://localhost:30000).
 
 If all goes well you should be prompted with the license agreement, and then
@@ -139,7 +139,7 @@ uses `secrets.json`.  Regardless of the name you choose it must be targeted to
     }
     ```
 
-1. Then add the secret to your `docker-compose.yml` file:
+2. Then add the secret to your `docker-compose.yml` file:
 
     ```yaml
     ---
@@ -180,7 +180,7 @@ upgrade to a new version of Foundry pull an updated image version.
     docker compose pull
     ```
 
-1. Recreate the running container:
+2. Recreate the running container:
 
     ```console
     docker compose up --detach
@@ -194,13 +194,13 @@ upgrade to a new version of Foundry pull an updated image version.
     docker stop <container_id>
     ```
 
-1. Pull the new image:
+2. Pull the new image:
 
     ```console
     docker pull felddy/foundryvtt:release
     ```
 
-1. Follow the previous instructions for [running](#running) the container above.
+3. Follow the previous instructions for [running](#running) the container above.
 
 ## Image tags ##
 
@@ -244,8 +244,8 @@ distribution.  Although all variables may be specified together, they are
 evaluated in the following order of precedence:
 
  1. `FOUNDRY_RELEASE_URL`, *or*
- 1. `FOUNDRY_USERNAME` and `FOUNDRY_PASSWORD`, *or*
- 1. `CONTAINER_CACHE`
+ 2. `FOUNDRY_USERNAME` and `FOUNDRY_PASSWORD`, *or*
+ 3. `CONTAINER_CACHE`
 
 #### Credentials variables ####
 
@@ -352,7 +352,7 @@ Docker:
     cd foundryvtt-docker
     ```
 
-1. Build the image using `buildx`:
+2. Build the image using `buildx`:
 
     ```console
     docker buildx build \
